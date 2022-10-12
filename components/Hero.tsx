@@ -21,7 +21,7 @@ export default function Hero({}: Props) {
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <BackgroundCircles />
       <span className="relative rounded-full h-32 w-32 mx-auto object-cover">
-        <Image src={avatar} />
+        <Image src={avatar} alt="avatar" />
       </span>
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
