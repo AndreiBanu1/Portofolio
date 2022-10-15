@@ -10,12 +10,12 @@ import { useForm, SubmitHandler } from "react-hook-form";
 
 type Inputs = {
   name: string;
-  email: string
+  email: string;
   subject: string;
   message: string;
 };
 
-export default function ContactMe() {
+function ContactMe() {
   const {
     register,
     handleSubmit,
@@ -55,7 +55,7 @@ export default function ContactMe() {
 
           <div className="flex items-center space-x-5 ">
             <MapPinIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">123 Developer Lane</p>
+            <p className="text-2xl">Bucharest, Romania</p>
           </div>
 
           <form
@@ -100,3 +100,5 @@ export default function ContactMe() {
     </motion.div>
   );
 }
+
+export default ContactMe;

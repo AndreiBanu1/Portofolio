@@ -2,12 +2,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import under_construction from "../public/under_construction.png";
+import { Project } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  projects: Project[];
+};
 
-function Projects({}: Props) {
-  const projects = [1, 2, 3, 4, 5];
-
+function Projects({ projects }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -31,26 +33,30 @@ function Projects({}: Props) {
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              src={under_construction.src}
+              src={urlFor(project.image).url()}
               alt="project under construction"
               className="w-3/4"
             />
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-4xl font-semibold text-center">
                 <span className="underline decoration-[#F7AB0A]">
-                  {" "}
-                  Project {i + 1} of {projects.length}: Blog
-                </span>
+                  Project {i + 1} of {projects.length}:
+                </span>{" "}
+                {project?.title}
               </h4>
+
+              {/* <div className="flex items-center space-x-2 justify-center">
+              {project?.technologies.map((technology) => (
+                <img
+                className="h-10 w-10"
+                key={technology._id}
+                src={urlFor(technology.image).url()}
+                />
+                ))}
+                </div> */}
+
               <p className="text-lg text-center md:text-left">
-                A project summary is a document that contains a concise,
-                comprehensive overview of an entire project and its key details.
-                It usually consists of a project’s objectives, background
-                information, requirements, problems, analysis, and conclusion. A
-                project summary is typically the first element written in your
-                project proposal, but it is sometimes written last, after
-                writing the project descriptions. This is done to avoid any
-                inconsistencies between the two.
+                {project?.summary}
               </p>
             </div>
           </div>
