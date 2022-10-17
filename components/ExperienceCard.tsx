@@ -22,31 +22,35 @@ function ExperienceCard({ experience }: Props) {
         transition={{ duration: 1.2 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="flex-none w-32 h-32 rounded-full md:rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
+        className="w-16 h-16 flex-none md:w-32 md:h-32 rounded-full md:rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
         src={urlFor(experience?.companyImage).url()}
         alt="companyImage"
       />
 
       <div className="px-0 md:px-10">
-        <h4 className="text-4xl font-light">{experience.jobTitle}</h4>
-        <p className="font-bold text-2xl mt-1">{experience.company}</p>
-        <div className="flex space-x-2 my-2">
+        <h4 className="text-sm text-center md:text-4xl font-light">
+          {experience.jobTitle}
+        </h4>
+        <p className="text-sm text-center font-bold md:text-2xl md:mt-1">
+          {experience.company}
+        </p>
+        <div className="grid grid-cols-3 place-items-center md:flex md:space-x-2 md:my-2">
           {experience.technologies.map((technology) => (
             <img
               key={technology._id}
-              className="h-10 w-10 rounded-full"
+              className="h-5 w-5 md:h-10 md:w-10 rounded-full"
               src={urlFor(technology.image).url()}
               alt="technology"
             />
           ))}
         </div>
-        <p className="uppercase py-5 text-gray-300">
+        <p className="uppercase text-sm md:py-5 md:text-base text-gray-300">
           {new Date(experience.dateStarted).toDateString()} -{" "}
           {experience.isCurrentlyWorkingHere
             ? "Present"
             : new Date(experience.dateEnded).toDateString()}
         </p>
-        <ul className="list-disc space-y-4 ml-5 text-lg">
+        <ul className="text-sm list-disc space-y-4 ml-5 md:text-lg">
           {experience.points.map((point, i) => (
             <li key={i}>{point}</li>
           ))}

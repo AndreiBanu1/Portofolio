@@ -37,7 +37,7 @@ export default function About({ pageInfo }: Props) {
           <span className="underline decoration-[#F7AB0A]">little</span>{" "}
           background
         </h4>
-        <p className="text-left overflow-y-scroll scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 h-[150px] sm:text-center text-base justify-self-left tracking-wide whitespace-pre-line leading-6">
+        <p className="text-left overflow-y-scroll scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 h-[150px] sm:text-center  text-base justify-self-left tracking-wide whitespace-pre-line leading-6 md:overflow-hidden md:h-[300px]">
           {pageInfo?.backgroundInformation}
         </p>
       </div>
