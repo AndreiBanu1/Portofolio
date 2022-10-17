@@ -7,7 +7,7 @@ export default {
       name: "name",
       title: "Name",
       type: "string",
-    },  
+    },
     {
       name: "role",
       title: "Role",
@@ -15,7 +15,7 @@ export default {
     },
     {
       name: "heroImage",
-      title: "Image",
+      title: "HeroImage",
       type: "image",
       options: {
         hotspot: true,

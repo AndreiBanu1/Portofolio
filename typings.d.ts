@@ -28,19 +28,20 @@ export interface PageInfo extends SanityBody {
 export interface Technology extends SanityBody {
     _type: "skill";
     image: Image;
-    progres: number;
+    progress: number;
     title: string;
 }
 
 export interface Skill extends SanityBody {
     _type: "skill";
     image: Image;
-    progres: number;
+    progress: number;
     title: string;
 }
 
 export interface Experience extends SanityBody {
     _type: "experience";
+    orderNo: number;
     company: string;
     companyImage: Image;
     dateStarted: date;
@@ -52,8 +53,8 @@ export interface Experience extends SanityBody {
 }
 
 export interface Project extends SanityBody {
-    title: string;
     _type: "project";
+    title: string;
     image: Image;
     linkToBuild: string;
     summary: string;
