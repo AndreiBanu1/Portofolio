@@ -1,0 +1,60 @@
+.project-img {
+  justify-self: center;
+  flex: auto;
+  overflow: hidden;      /* Important to make sure the image stays within bounds */
+  object-fit: stretch; 
+}
+
+.project-group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-img {
+  justify-self: center;
+  flex: auto;
+  overflow: hidden;      /* Important to make sure the image stays within bounds */
+  object-fit: cover; 
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+}
+
+.custom-group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    max-height: 25rem;
+}
+
+@media only screen
+and (min-device-height: 1000px)
+and (min-device-width: 480px) {
+    .custom-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        max-width: fit-content;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+.custom-img {
+  justify-self: center;
+  flex: auto;
+  overflow: hidden;      /* Important to make sure the image stays within bounds */
+  object-fit: cover; 
+  border-radius: 50%;
+  height: 8rem;
+  width: 8rem;
+}
+}
+
