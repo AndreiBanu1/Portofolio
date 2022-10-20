@@ -21,13 +21,13 @@ function Projects({ projects }: Props) {
         Projects
       </h3>
 
-      <div className="relative top-10 md:top-10 w-full flex overflow-x-scroll snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
+      <div className="top-10 md:top-10 w-full h-full flex flex-row overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
         {projects.map((project, i) => (
           // eslint-disable-next-line react/jsx-key
-          <div className="w-screen flex-shrink-0 snap-center flex flex-row md:flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen">
+          <div className="w-full h-11/12 flex-shrink-0 snap-center flex flex-col md:flex-col space-y-5 items-center justify-center md:p-44">
             <a
               href={project.linkToBuild}
-              className="project-image w-screen h-full md:w-1/2 md:h-screen"
+              className="relative top-20 sm:top-0 w-3/4 md:w-1/2 md:h-screen object-cover"
             >
               <motion.img
                 initial={{
@@ -41,7 +41,7 @@ function Projects({ projects }: Props) {
                 alt="project under construction"
               />
             </a>
-            <div className="relative top-48 md:top-0 space-y-5 px-0 md:px-10 max-w-6xl md:max-h-screen w-screen">
+            <div className="relative top-28 md:top-0 space-y-5 px-0 md:px-10 max-w-6xl md:max-h-screen w-full h-1/2">
               <h4 className="text-xl md:text-2xl font-semibold text-center">
                 <a href={project.linkToBuild}>
                   <span className="underline decoration-[#F7AB0A]">
